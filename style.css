@@ -22,7 +22,9 @@ section {
   animation-direction: alternate;
 }
 
-.about, .ict, .port {
+.about,
+.ict,
+.port {
   background-color: white;
 }
 
@@ -50,23 +52,23 @@ section {
 
 @keyframes bgcolor {
   0% {
-    background-color: #45a3e5;
+    background-color: #390099;
   }
 
   30% {
-    background-color: #66bf39;
+    background-color: #9e0059;
   }
 
   60% {
-    background-color: #eb670f;
+    background-color: #ff0054;
   }
 
   90% {
-    background-color: #f35;
+    background-color: #ff5400;
   }
 
   100% {
-    background-color: #864cbf;
+    background-color: #ffbd00;
   }
 }
 
@@ -103,10 +105,6 @@ section {
   text-align: center;
 }
 
-a {
-  color: #000;
-}
-
 .sidebar {
   width: 100vh;
   height: 40px;
@@ -133,8 +131,30 @@ a {
 
 .sideblock a {
   text-decoration: none;
+  color: #000;
 }
 
 .sideblock a:hover {
   font-weight: 800;
+}
+
+blockquote {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 70px;
+  width: 45%;
+  color: #000;
+}
+
+blockquote p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  top: -70px;
+}
+
+blockquote a {
+  text-decoration: underline;
+  color: #000;
 }
