@@ -22,7 +22,7 @@ section {
   animation-direction: alternate;
 }
 
-.about {
+.about, .ict, .port {
   background-color: white;
 }
 
