@@ -15,6 +15,29 @@ section {
   overflow-x: hidden;
 }
 
+footer {
+  text-align: center;
+  color: black;
+  position: fixed;
+  bottom: 5px;
+  z-index: 1000;
+  width: 100%;
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+  line-height: 11px;
+}
+
+footer b {
+  font-family: "Poppins", sans-serif;
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
+  line-height: 11px;
+  padding: none;
+}
+
 .home {
   -webkit-animation: bgcolor 20s infinite;
   animation: bgcolor 10s infinite;
