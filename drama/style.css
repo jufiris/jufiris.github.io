@@ -11,13 +11,15 @@ body {
 }
 
 section {
-  width: 40vw;
+  width: 850px;
   height: 100vh;
   margin: 0;
   top: 0;
   left: 0;
   padding: 0;
   text-align: left;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12pt;
 }
 
 column {
@@ -28,14 +30,14 @@ column {
 
 #title {
   left: 0;
-  width: 40%;
+  width: 1050px;
   display: block;
 }
 
 h1 {
   color: black;
   font-size: 68px;
-  text-align: left;
+  text-align: center;
   font-family: "Playfair Display", serif;
   letter-spacing: 4px;
   font-weight: 700;
@@ -47,15 +49,17 @@ h1 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
+  font-style: normal;
 }
 
 .quote {
   font-weight: 300;
   font-family: "Source Sans Pro", sans-serif;
   padding: 30px 15%;
-  width: 40%;
+  width: 890px;
   margin-top: 25%;
   margin-bottom: 25%;
+  text-align: justify;
 }
 
 q {
@@ -68,38 +72,23 @@ q {
 
 q:before,
 q:after {
-  font-size: 50px;
-  line-height: 0px;
-  position: relative;
-  display: block;
-  color: #e5171c;
-  font-style: normal;
-}
-
-q:before {
-  content: "❝";
-  left: -50%;
-}
-
-q:after {
-  content: "❞";
-  right: -50%;
-  top: 20px;
+  content: "";
 }
 
 auth {
-  display: block;
-  text-align: right;
-  margin-top: 30px;
-  font-size: 14px;
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  font-size: 50px;
   letter-spacing: 2px;
   color: #000;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
-}
-
-auth:before {
-  content: "— ";
+  line-height: 80px;
+  font-style: normal;
+  background: #e5171c;
+  width: 595px;
+  text-align: center;
 }
 
 #progress {
