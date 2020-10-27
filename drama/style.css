@@ -1,1 +1,39 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+body,
+section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  top: 0;
+  left: 0;
+  padding: 0;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  position: relative;
+  top: 30vh;
+  left: 0;
+  width: 50%;
+  display: block;
+}
+
+h1 {
+  color: black;
+  font-size: 80px;
+  text-align: left;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+#changingword {
+  color: #e5171c;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+}
