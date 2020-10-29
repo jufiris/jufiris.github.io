@@ -76,7 +76,7 @@ body {
 #full {
 	height: 100%;
 	position: relative;
-	margin-top: 50vh;
+	margin-top: 45vh;
 	left: 83%;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
@@ -122,29 +122,34 @@ h3 {
 	width: 890px;
 	font-family: "Source Sans Pro", sans-serif;
 	font-weight: 300;
-	line-height: 65px;
-	font-size: 18px;
+	line-height: 60px;
+	font-size: 20px;
 	letter-spacing: 15px;
+	text-align: center;
 }
 
 q1 {
-	font-size: 85px;
+	font-size: 89px;
 	font-family: "Playfair Display", serif;
 	letter-spacing: 4px;
 	font-weight: 700;
 	font-style: italic;
 }
 
-q1:before,
-q1:after {
-	content: "";
+q2 {
+	font-size: 80px;
+	font-family: "Playfair Display", serif;
+	letter-spacing: 4px;
+	font-weight: 700;
+	font-style: italic;
+	z-index: 1000;
 }
 
 auth {
 	display: inline-block;
 	position: relative;
 	top: -20px;
-	font-size: 50px;
+	font-size: 42px;
 	letter-spacing: 2px;
 	color: #000;
 	font-family: "Source Sans Pro", sans-serif;
@@ -152,8 +157,9 @@ auth {
 	line-height: 80px;
 	font-style: normal;
 	background: #e5171c;
-	width: 595px;
+	width: 890px;
 	text-align: center;
+	z-index: -10;
 }
 
 section {
@@ -161,7 +167,9 @@ section {
 	margin-top: 25vh;
 	max-height: 50vh;
 	width: 40vw;
-	padding: 50px 100px 50px 100px;
+	border: white solid 50px;
+	border-width: 50px;
+	padding: 0px 50px 0px 50px;
 	text-align: justify;
 	font-family: "Source Sans Pro", sans-serif;
 	font-size: 12pt;
@@ -169,6 +177,7 @@ section {
 	display: block;
 	position: relative;
 	background: white;
+	overflow-y: auto;
 }
 
 smallq {
@@ -179,4 +188,44 @@ smallq {
 	font-style: italic;
 	text-align: center;
 	line-height: 1.8vw;
+	text-decoration: underline solid #e5171c;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+credit {
+	font-size: 9px;
+	color: white;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	text-transform: uppercase;
+	font-family: "Source Sans Pro", sans-serif;
+	opacity: 0.5;
+	text-align: center;
+	z-index: 1000;
+}
+
+credit a, credit a:hover {
+	color: white;
+	transition: opacity 1s ease-in-out;
+	text-decoration: underline solid #e5171c;
+}
+
+credita a:hover {
+	opacity: 1;
 }
