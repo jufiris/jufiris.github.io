@@ -226,6 +226,34 @@ credit a, credit a:hover {
 	text-decoration: underline solid #e5171c;
 }
 
-credita a:hover {
+credit a:hover {
 	opacity: 1;
+	transition: opacity 1s ease-in-out;
+}
+
+#word {
+	top: 50%;
+	margin-top: 45vh;
+  left: 0;
+  width: 100%;
+  display: block;
+}
+
+h4 {
+  color: white;
+  font-size: 90px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+}
+
+#changingword {
+  color: #e5171c;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-style: normal;
 }
