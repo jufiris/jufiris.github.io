@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --back: #EAEAEA;
+  --light: #FDF5DF;
+  --main: #5EBEC4;
+  --accent: #F92C85;
+  --text: #252A34;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--back);
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 10pt;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+navbar {
+  width: calc(100% - 80px);
+  height: 50px;
+  background: var(--back);
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 90px;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: var(--accent);
+}
+
+#menuToggle input {
+  display: block;
+  width: 33px;
+  height: 30px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 3px;
+  margin-bottom: 7px;
+  position: relative;
+  background: #BFC0C0;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-1px, -0px);
+  background: #2D3142;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+  background: var(--text);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+  background: var(--text);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -30px;
+  padding: 50px;
+  padding-top: 110px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+  display: inline-block;
+  width: 13vw;
+  color: var(--main);
+  text-transform: uppercase;
+}
+
+dotbox {
+  background-image: radial-gradient(#000000 20%, rgba(255, 255, 255, 0) 20%);
+  background-position: 0 0;
+  background-size: 20px 20px;
+  height: 100px;
+}
+
+body,
+section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  top: 0;
+  left: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+footer {
+  text-align: center;
+  color: var(--text);
+  position: fixed;
+  bottom: 5px;
+  z-index: 1000;
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  line-height: 11px;
+}
+
+footer b {
+  font-family: "Montserrat", sans-serif;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--text);
+  line-height: 11px;
+  padding: none;
+}
+
+#box {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+blockquote {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: 900;
+  font-size: 70px;
+  width: 35%;
+  color: var(--text);
+}
+
+blockquote b {
+  font-weight: 900;
+  color: var(--accent);
+}
+
+blockquote p {
+  font-family: "Space Mono", monospace;
+  font-size: 14pt;
+  font-weight: 400;
+  top: -80px;
+}
+
+blockquote a {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.typing-demo {
+  width: 8.3ch;
+  animation: typing 1s steps(9), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+.wrappertype {
+  height: 10;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
