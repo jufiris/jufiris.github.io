@@ -214,7 +214,7 @@ blockquote a {
 }
 
 .typing-demo {
-  width: 8.3ch;
+  width: 8.4ch;
   animation: typing 1s steps(9), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
