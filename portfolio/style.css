@@ -1,11 +1,156 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,800&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --back: #EAEAEA;
+  --light: #FDF5DF;
+  --main: #5EBEC4;
+  --accent: #F92C85;
+  --text: #252A34;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-body,
-section {
+body {
+  background-color: var(--back);
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 10pt;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+navbar {
+  width: calc(100% - 80px);
+  height: 50px;
+  background: var(--back);
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 90px;
+}
+
+topbar {
+  position: fixed;
+  background: var(--back);
+  z-index: 1000;
+  width: 100%;
+  height: 50px;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: var(--accent);
+}
+
+#menuToggle input {
+  display: block;
+  width: 33px;
+  height: 30px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 3px;
+  margin-bottom: 7px;
+  position: relative;
+  background: #BFC0C0;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-1px, -0px);
+  background: #2D3142;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+  background: var(--text);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+  background: var(--text);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -30px;
+  padding: 50px;
+  padding-top: 110px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+  display: inline-block;
+  width: 12vw;
+  color: var(--main);
+  text-transform: uppercase;
+}
+
+dotbox {
+  background-image: radial-gradient(#000000 20%, rgba(255, 255, 255, 0) 20%);
+  background-position: 0 0;
+  background-size: 20px 20px;
+  height: 100px;
+}
+
+body{
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -15,85 +160,37 @@ section {
   overflow-x: hidden;
 }
 
+section {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  top: 0;
+  left: 500px;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 footer {
   text-align: center;
-  color: black;
+  color: var(--text);
   position: fixed;
   bottom: 5px;
   z-index: 1000;
   width: 100%;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: 10px;
   line-height: 11px;
 }
 
 footer b {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 footer a {
   text-decoration: none;
-  color: #000;
+  color: var(--text);
   line-height: 11px;
   padding: none;
-}
-
-.home {
-  -webkit-animation: bgcolor 20s infinite;
-  animation: bgcolor 10s infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-}
-
-.about,
-.ict,
-.didact,
-.prof {
-  background-color: white;
-}
-
-@-webkit-keyframes bgcolor {
-  0% {
-    background-color: #45a3e5;
-  }
-
-  30% {
-    background-color: #66bf39;
-  }
-
-  60% {
-    background-color: #eb670f;
-  }
-
-  90% {
-    background-color: #f35;
-  }
-
-  100% {
-    background-color: #864cbf;
-  }
-}
-
-@keyframes bgcolor {
-  0% {
-    background-color: #390099;
-  }
-
-  30% {
-    background-color: #9e0059;
-  }
-
-  60% {
-    background-color: #ff0054;
-  }
-
-  90% {
-    background-color: #ff5400;
-  }
-
-  100% {
-    background-color: #ffbd00;
-  }
 }
 
 #box {
@@ -107,78 +204,46 @@ footer a {
   display: flex;
 }
 
-#title {
-  color: #000;
-  font-size: 130px;
-  line-height: 130px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  display: block;
-  text-align: center;
-}
-
-#subtitle {
-  font-size: 18px;
-  line-height: 15px;
-  margin-top: -10px;
-  letter-spacing: 4px;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-family: "Roboto Mono", monospace;
-  display: block;
-  text-align: center;
-}
-
-.sidebar {
-  width: 100vh;
-  height: 40px;
-  transform-origin: top left;
-  position: fixed;
-  left: 0;
-  top: 100%;
-  transform: rotate(-90deg);
-  border-bottom: 1px solid black;
-  text-align: right;
-  z-index: 100;
-}
-
-.sideblock {
-  font-size: 12px;
-  letter-spacing: 2px;
-  line-height: 40px;
-  font-weight: 400;
-  padding: 15px;
-  text-transform: uppercase;
-  font-family: "Roboto Mono", monospace;
-  display: inline;
-}
-
-.sideblock a {
-  text-decoration: none;
-  color: #000;
-}
-
-.sideblock a:hover {
-  font-weight: 800;
-}
-
 blockquote {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 70px;
   width: 35%;
-  color: #000;
+  color: var(--text);
+}
+
+blockquote b {
+  font-weight: 900;
+  color: var(--accent);
 }
 
 blockquote p {
-  font-family: "Roboto Mono", monospace;
-  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  font-size: 14pt;
   font-weight: 400;
-  top: -70px;
+  top: -80px;
 }
 
 blockquote a {
   text-decoration: underline;
-  color: #000;
+  color: var(--accent);
+}
+
+body,
+section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  top: 0;
+  left: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.about,
+.ict,
+.didact,
+.prof {
+  
 }
