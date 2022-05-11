@@ -8,49 +8,66 @@
 
 <body>
 
-  <div class="sidebar">
-    <div class="sideblock"><a href="#professioneel">ontwikkeling</a></div>
-    <div class="sideblock"><a href="#didactiek">didactiek</a></div>
-    <div class="sideblock"><a href="#ICT">geletterdheid</a></div>
-    <div class="sideblock"><a href="#about">over mij</a></div>
-    <div class="sideblock"><a href="#home">home</a></div>
-    <div class="sideblock"></div>
-  </div>
-    
+  <topbar>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+        <a href="#about">
+          <li>Home</li>
+        </a>
+        <a href="#ICT">
+          <li>Digitale vaardigheden</li>
+        </a>
+        <a href="#didactiek">
+          <li>Digitale didactiek</li>
+        </a>
+        <a href="#professioneel">
+          <li>Professionele ontwikkeling</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+
+  <navbar>
+    <title>Juf Iris</title>
+  </navbar>
+  </topbar>
+
   <footer>website gemaakt door en voor <b><a href="https://github.com/jufiris/jufiris.github.io">iris</a></b></footer>
 
-  <section class="home" id="home">
-    <div id="box">
-      <div id="title">Hallo.
-        <div id="subtitle">dit wordt mijn portfolio</div>
-      </div>
-    </div>
-  </section>
- 
   <section class="about" id="about">
     <div id="box">
-      <blockquote>Ik ben Iris. <p>Ik ben 26 jaar en volg het verkorte PABO-programma aan de Hanzehogeschool in Groningen. Mijn plan is om mijn ICT portfolio helemaal zelf te coderen. <a href="https://coolors.co/390099-9e0059-ff0054-ff5400-ffbd00">Dit</a> is het kleurenpalette dat ik op dit moment gebruik.</p>
+      <blockquote>
+        <div class="wrappertype">
+          <div class="typing-demo"><b>Ik ben Iris.</b></div>
+        </div>
+        <p>Welkom op mijn ICT portfolio. Dit portfolio is opgedeeld in drie delen. Deze delen kan je vinden in het menu aan de linkerkant of door simpelweg naar beneden te scrollen! Ik wens je veel plezier bij het lezen.</p>
       </blockquote>
-      <img src="https://i.ibb.co/Y2jKY5h/112842-Bt-RIq-APY.png">
+      <img src="https://i.ibb.co/C2nxhft/download20211203150354.png">
     </div>
   </section>
 
   <section class="ict" id="ICT">
     <div id="box">
-      <div id="title">Digitale geletterdheid</div>
+      Digitale geletterdheid: ICT-basisvaardigheden, Mediawijsheid, Computational thinking
     </div>
   </section>
 
   <section class="didact" id="didactiek">
     <div id="box">
-      <div id="title">Digitale didactiek</div>
+      Digitale didactiek: Interactieve lessen
     </div>
   </section>
 
   <section class="prof" id="professioneel">
     <div id="box">
-      <div id="title">Professionele ontwikkeling</div>
+      Professionele ontwikkeling: Visie, Innovatie, Samenwerking
     </div>
   </section>
+
 </body>
-</html>
