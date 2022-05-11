@@ -130,7 +130,7 @@ title {
   font-size: 30px;
   line-height: 50px;
   display: inline-block;
-  width: 12vw;
+  width: 13vw;
   color: var(--main);
   text-transform: uppercase;
 }
@@ -211,4 +211,34 @@ blockquote p {
 blockquote a {
   text-decoration: underline;
   color: var(--accent);
+}
+
+.typing-demo {
+  width: 8.3ch;
+  animation: typing 1s steps(9), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+.wrappertype {
+  height: 10;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
