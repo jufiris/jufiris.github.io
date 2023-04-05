@@ -133,6 +133,36 @@ topbar {
   transform: none;
 }
 
+.typing-demo {
+  width: 405px;
+  animation: typing 1s steps(12), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--text);
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.wrappertype {
+  height: 10;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 title {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
@@ -254,7 +284,7 @@ blockquote a {
 .didact img,
 .prof img {
   max-width: auto;
-  height: 300px;
+  height: 350px;
   vertical-align: middle;
 }
 
@@ -292,4 +322,24 @@ blockquote a {
   line-height: 40px;
   margin-bottom: -15px;
   margin-top: 40px;
+}
+
+#credit {
+  width: 100%;
+  height: 7%;
+  font-size: 8pt;
+  position: relative;
+  bottom: 3pt;
+  text-align: center;
+}
+
+#credit a {
+  color: var(--text);
+}
+
+#credit h1 {
+  color: var(--text);
+  font-weight: 900;
+  font-size: 10pt;
+  font-family: Montserrat;
 }
