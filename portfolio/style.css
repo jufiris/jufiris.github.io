@@ -242,6 +242,8 @@ blockquote a {
   display: flex;
   align-items: center;
   min-height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .didact {
