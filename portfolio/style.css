@@ -23,6 +23,20 @@ body {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eaeaea;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b4b6b8;
+  border-radius: 100px;
+}
+
 navbar {
   width: calc(100% - 80px);
   height: 50px;
@@ -255,14 +269,20 @@ blockquote b {
 
 blockquote p {
   font-family: "Space Mono", monospace;
-  font-size: 14pt;
+  font-size: 13pt;
   font-weight: 400;
-  top: -80px;
+  padding: 10px;
 }
 
 blockquote a {
   text-decoration: underline;
   color: var(--text);
+}
+
+blockquote h1 {
+  font-weight: 900;
+  font-size: 55px;
+  margin-bottom: -10px;
 }
 
 .about,
@@ -290,14 +310,10 @@ blockquote a {
 
 .ict blockquote h1 {
   color: var(--accent2);
-  font-weight: 900;
-  font-size: 55px;
 }
 
 .didact blockquote h1 {
   color: var(--main);
-  font-weight: 900;
-  font-size: 55px;
 }
 
 .didact blockquote h2 {
@@ -309,10 +325,22 @@ blockquote a {
   margin-top: 40px;
 }
 
+.didact p,
+.prof p {
+  min-height: 2vh;
+  max-height: 20vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.didact p::-webkit-scrollbar,
+.prof p::-webkit-scrollbar {
+  width: 4px;
+  left: 5px;
+}
+
 .prof blockquote h1 {
   color: var(--accent);
-  font-weight: 900;
-  font-size: 55px;
 }
 
 .prof blockquote h2 {
