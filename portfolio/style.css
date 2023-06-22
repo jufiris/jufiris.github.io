@@ -1,12 +1,18 @@
+/*	RADIO-MENU STUFF
+   ∞∞ STARTS HERE ∞∞
+*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-:root {
-  --back: #eaeaea;
-  --light: #fdf5df;
-  --main: #5ebec4;
-  --accent: #f92c85;
-  --accent2: #88c123;
-  --text: #252a34;
+main {
+  width: 100%;
+  height: 100%;
+  color: var(--text);
+  font-weight: 300;
+  font-family: "Space Mono", monospace;
+}
+
+input[name="menu"] {
+  display: none;
 }
 
 html {
@@ -21,6 +27,137 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+
+navbar {
+  width: calc(100% - 200px);
+  height: 50px;
+  top: 40px;
+  background: var(--back);
+  display: block;
+  position: absolute;
+  line-height: 50px;
+  right: 100px;
+  text-align: right;
+  z-index: 1000;
+}
+
+/* sections */ /* keep them off canvas */
+section {
+  transition: bottom 0ms linear 900ms,
+    opacity 900ms cubic-bezier(0.4, 0.25, 0.3, 1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+section:first-of-type {
+  justify-content: center;
+}
+
+/* menu */ /* this goes off canvas as well */
+menu {
+  transition: bottom 0ms linear 1000ms,
+    background-color 1000ms cubic-bezier(0.4, 0.25, 0.3, 1);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 100%;
+  left: 0;
+  color: var(--text);
+  background-color: var(--back);
+  z-index: 999;
+}
+
+menu nav {
+  transition: all 500ms cubic-bezier(0.4, 0.25, 0.3, 1) 250ms;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+menu nav label {
+  line-height: 50px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+menu nav label:hover {
+  color: var(--accent);
+}
+
+/* menu button */
+label[for="menu"] {
+  transition: opacity 300ms cubic-bezier(0.4, 0.25, 0.3, 1) 900ms;
+  display: inline-block;
+  position: fixed;
+  top: 30px;
+  left: 100px;
+  line-height: 40px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: lowercase;
+  cursor: pointer;
+  color: var(--accent2);
+  z-index: 1000;
+}
+
+/* menu toggle */ /* click the label > checks the radio > toggles the menu */
+#menu:checked + menu {
+  transition: background-color 800ms cubic-bezier(0.4, 0.25, 0.3, 1);
+  bottom: 0;
+  background-color: var(--back);
+}
+
+#menu:checked + menu nav {
+  transition: all 500ms cubic-bezier(0.4, 0.25, 0.3, 1) 250ms;
+  height: 70%;
+  bottom: 15%;
+  font-size: 1.3rem;
+}
+
+/* section change */ /* click the label > check the radio > change the section */
+input[name="menu"]:checked + section {
+  transition: opacity 900ms cubic-bezier(0.4, 0.25, 0.3, 1);
+  bottom: 0;
+  opacity: 1;
+}
+
+/*	RADIO-MENU STUFF
+    ∞∞ ENDS HERE ∞∞
+*/
+
+/* the rest is just content */
+
+:root {
+  --back: #eaeaea;
+  --light: #fdf5df;
+  --main: #5ebec4;
+  --accent: #f92c85;
+  --accent2: #88c123;
+  --text: #252a34;
 }
 
 ::-webkit-scrollbar {
@@ -35,116 +172,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: #b4b6b8;
   border-radius: 100px;
-}
-
-navbar {
-  width: calc(100% - 80px);
-  height: 50px;
-  background: var(--back);
-  display: block;
-  position: absolute;
-  top: 12px;
-  left: 90px;
-}
-
-topbar {
-  position: fixed;
-  background: var(--back);
-  z-index: 1000;
-  width: 100%;
-  height: 50px;
-}
-
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 25px;
-  left: 25px;
-  z-index: 1;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle a {
-  text-decoration: none;
-  color: var(--text);
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover {
-  color: var(--accent);
-}
-
-#menuToggle input {
-  display: block;
-  width: 33px;
-  height: 30px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-  -webkit-touch-callout: none;
-}
-
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 3px;
-  margin-bottom: 7px;
-  position: relative;
-  background: #bfc0c0;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-1px, -0px);
-  background: #2d3142;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-  background: var(--text);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-  background: var(--text);
-}
-
-#menu {
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -30px;
-  padding: 50px;
-  padding-top: 110px;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-  padding: 10px 0;
-}
-
-#menuToggle input:checked ~ ul {
-  transform: none;
 }
 
 .typing-demo {
@@ -181,33 +208,22 @@ title {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 50px;
   display: inline-block;
-  width: 12vw;
   color: var(--main);
   text-transform: uppercase;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  top: 0;
-  left: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-section {
+blocky {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
   top: 0;
-  left: 500px;
   padding: 0;
   display: flex;
   flex-direction: column;
+  font-family: "Space Mono", monospace;
 }
 
 footer {
@@ -220,10 +236,12 @@ footer {
   font-family: "Space Mono", monospace;
   font-size: 10px;
   line-height: 11px;
+  z-index: 1000;
 }
 
 footer b {
   font-family: "Montserrat", sans-serif;
+  font-weight: 900;
 }
 
 footer a {
@@ -350,24 +368,4 @@ blockquote h1 {
   line-height: 40px;
   margin-bottom: -15px;
   margin-top: 40px;
-}
-
-#credit {
-  width: 100%;
-  height: 7%;
-  font-size: 8pt;
-  position: relative;
-  bottom: 3pt;
-  text-align: center;
-}
-
-#credit a {
-  color: var(--text);
-}
-
-#credit h1 {
-  color: var(--text);
-  font-weight: 900;
-  font-size: 10pt;
-  font-family: Montserrat;
 }
