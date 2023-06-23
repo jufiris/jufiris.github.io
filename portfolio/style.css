@@ -257,7 +257,7 @@ footer a {
   top: 0;
   left: 0;
   min-height: 100%;
-  max-width: 70%;
+  max-width: 80%;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -289,7 +289,7 @@ blockquote .didact {
   display: flex;
   flex-flow: row wrap;
   flex-wrap: wrap;
-  width: 200%;
+  width: 150%;
 }
 
 blockquote .about,
@@ -377,7 +377,6 @@ blockquote h1 {
 
 .grid {
   display: table;
-  width: 60%;
 }
 
 .boxy {
