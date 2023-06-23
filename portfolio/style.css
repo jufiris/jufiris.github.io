@@ -380,10 +380,12 @@ blockquote h1 {
 }
 
 .boxy {
-  display: table-cell;
-  float: right;
-  width: 18vw;
-  padding: 20px;
+   display: table-cell;
+    float: left;
+    width: 40%;
+    padding: 20px;
+    position: relative;
+    left: 5%;
 }
 
 .prof blockquote h1 {
