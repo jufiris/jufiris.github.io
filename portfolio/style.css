@@ -377,6 +377,7 @@ blockquote h1 {
 
 .grid {
   display: table;
+  width: 60%;
 }
 
 .boxy {
